@@ -101,7 +101,8 @@ def main(argv):
     logger = tux.WandBLogger(
         config=FLAGS.logger,
         variant=variant,
-        enable=FLAGS.log_all_worker or (jax.process_index() == 0),
+        #enable=FLAGS.log_all_worker or (jax.process_index() == 0),
+        enable=False,
     )
     set_random_seed(FLAGS.seed)
 
